@@ -258,6 +258,7 @@ class Password
    */
   public function precisionFloat(int|float $num): float
   {
+    /* @phpstan-ignore-next-line argument.type ($num should never be INF or NAN) */
     return (float)bcadd((string)$num, '0', 2);
   }
 }
